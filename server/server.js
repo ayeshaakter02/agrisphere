@@ -1,13 +1,15 @@
+require("dotenv").config();
+
 const express = require("express");
-const mongoose = require('mongoose');
-const cors = require('cors');
+const mongoose = require("mongoose");
+const cors = require("cors");
 const dbConnection = require("./src/config/dbconfig");
-require('dotenv').config();
+
 
 const app = express();
-const port = process.env.PORT || 4000
-dbConnection()
+const port = process.env.PORT || 4000;
+dbConnection();
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
