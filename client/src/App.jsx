@@ -1,12 +1,26 @@
-import React from 'react'
-import Register from './pages/Register'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-const App = () => {
-  return (
-    <div>
-      <Register/>
-    </div>
-  )
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+
+const router = createBrowserRouter([
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
